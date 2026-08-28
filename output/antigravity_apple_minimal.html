@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antigravity Studio — Autonomous Code & Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&display=swap');
+    </style>
+</head>
+<body class="bg-[#000000] text-[#f5f5f7] font-sans tracking-tight antialiased min-h-screen selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 px-6 py-4">
+        <nav class="max-w-7xl mx-auto bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-r from-[#2997ff] via-[#9955ff] to-[#ff2d55] flex items-center justify-center text-white font-black shadow-md">
+                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                </div>
+                <span class="text-lg font-bold tracking-tight text-[#f5f5f7]">Antigravity Studio</span>
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-[#86868b]">
+                <a href="#features" class="hover:text-[#f5f5f7] transition-colors">Features</a>
+                <a href="#metrics" class="hover:text-[#f5f5f7] transition-colors">Performance</a>
+                <a href="#pricing" class="hover:text-[#f5f5f7] transition-colors">Pricing</a>
+                <a href="#faq" class="hover:text-[#f5f5f7] transition-colors">FAQ</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#pricing" class="bg-[#0071e3] hover:bg-[#0077ed] text-white px-6 py-3 rounded-full font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] text-xs py-2 px-4 shadow-sm">Get Started Free</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-36 pb-20 px-6 overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium mb-8">
+                <i data-lucide="zap" class="w-3.5 h-3.5"></i>
+                <span>Autonomous Code & Design</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold text-[#f5f5f7] tracking-tight leading-[1.1] mb-8">
+                Design & Ship at the <br>
+                <span class="bg-gradient-to-r from-[#2997ff] via-[#9955ff] to-[#ff2d55] bg-clip-text text-transparent">Speed of Thought</span>
+            </h1>
+            <p class="text-lg md:text-xl text-[#86868b] max-w-3xl mx-auto leading-relaxed mb-10">
+                Transform plain English concepts into responsive websites and interactive slides instantly.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#pricing" class="bg-[#0071e3] hover:bg-[#0077ed] text-white px-6 py-3 rounded-full font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] text-base px-8 py-4 flex items-center gap-2">
+                    <span>Get Started Free</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#features" class="bg-[#1d1d1f] hover:bg-[#2d2d2f] text-[#f5f5f7] border border-[#424245] px-6 py-3 rounded-full font-medium transition-all duration-200 text-base px-8 py-4">
+                    Explore Architecture
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section id="metrics" class="py-12 border-y border-slate-800/40 bg-slate-950/20">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+            
+            <div class="text-center p-6">
+                <div class="text-4xl lg:text-5xl font-extrabold text-[#f5f5f7] mb-2 tracking-tight">99.99%</div>
+                <div class="text-[#86868b] text-sm font-medium">Uptime Guarantee</div>
+            </div>
+            <div class="text-center p-6">
+                <div class="text-4xl lg:text-5xl font-extrabold text-[#f5f5f7] mb-2 tracking-tight"><10ms</div>
+                <div class="text-[#86868b] text-sm font-medium">Sub-millisecond Latency</div>
+            </div>
+            <div class="text-center p-6">
+                <div class="text-4xl lg:text-5xl font-extrabold text-[#f5f5f7] mb-2 tracking-tight">10M+</div>
+                <div class="text-[#86868b] text-sm font-medium">Events Processed / Sec</div>
+            </div>
+            <div class="text-center p-6">
+                <div class="text-4xl lg:text-5xl font-extrabold text-[#f5f5f7] mb-2 tracking-tight">4.9/5</div>
+                <div class="text-[#86868b] text-sm font-medium">Developer Satisfaction</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-[#f5f5f7] mb-4">Engineered for Radical Velocity</h2>
+            <p class="text-[#86868b] text-base">Uncompromising performance, modular component design, and zero credit limits.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl relative overflow-hidden group">
+                <div class="w-12 h-12 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#f5f5f7] mb-3">Real-time AI Synthesis</h3>
+                <p class="text-[#86868b] leading-relaxed text-sm">Generates production-grade UI code on demand.</p>
+            </div>
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl relative overflow-hidden group">
+                <div class="w-12 h-12 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="shield-check" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#f5f5f7] mb-3">Zero Third-Party Credits</h3>
+                <p class="text-[#86868b] leading-relaxed text-sm">Local deterministic design engine with zero API bill shock.</p>
+            </div>
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl relative overflow-hidden group">
+                <div class="w-12 h-12 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="code" class="w-6 h-6"></i>
+                </div>
+                <h3 class="text-xl font-bold text-[#f5f5f7] mb-3">Seamless Code Export</h3>
+                <p class="text-[#86868b] leading-relaxed text-sm">100% standard Tailwind CSS and modern HTML/React.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-[#f5f5f7] mb-4">Simple, Transparent Pricing</h2>
+            <p class="text-[#86868b] text-base">No hidden credits. No per-prompt metered fees. Own your tools forever.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-3xl relative flex flex-col justify-between">
+                
+                <div>
+                    <h4 class="text-xl font-bold text-[#f5f5f7] mb-2">Starter</h4>
+                    <p class="text-[#86868b] text-xs mb-6">Perfect for indie hackers and side projects.</p>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-extrabold text-[#f5f5f7]">$0</span>
+                        <span class="text-[#86868b] text-sm">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>10,000 requests/mo</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Community support</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>1 workspace</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Basic analytics</li>
+                    </ul>
+                </div>
+                <button class="bg-[#1d1d1f] hover:bg-[#2d2d2f] text-[#f5f5f7] border border-[#424245] px-6 py-3 rounded-full font-medium transition-all duration-200 w-full text-center block cursor-pointer">Start for Free</button>
+            </div>
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-3xl relative flex flex-col justify-between">
+                <span class="bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium absolute -top-3 left-1/2 -translate-x-1/2">Most Popular</span>
+                <div>
+                    <h4 class="text-xl font-bold text-[#f5f5f7] mb-2">Pro Architect</h4>
+                    <p class="text-[#86868b] text-xs mb-6">For high-velocity engineering teams.</p>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-extrabold text-[#f5f5f7]">$49</span>
+                        <span class="text-[#86868b] text-sm">/mo</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Unlimited requests</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>24/7 Dedicated SLA</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Infinite workspaces</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Deep AI telemetry</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Custom webhooks</li>
+                    </ul>
+                </div>
+                <button class="bg-[#0071e3] hover:bg-[#0077ed] text-white px-6 py-3 rounded-full font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] w-full text-center block cursor-pointer">Start 14-Day Free Trial</button>
+            </div>
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-3xl relative flex flex-col justify-between">
+                
+                <div>
+                    <h4 class="text-xl font-bold text-[#f5f5f7] mb-2">Enterprise</h4>
+                    <p class="text-[#86868b] text-xs mb-6">Dedicated infrastructure & bespoke compliance.</p>
+                    <div class="flex items-baseline gap-1 mb-6">
+                        <span class="text-4xl font-extrabold text-[#f5f5f7]">Custom</span>
+                        <span class="text-[#86868b] text-sm"></span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Self-hosted VPC option</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>SOC2 Type II compliance</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Custom model fine-tuning</li><li class="flex items-center gap-3 text-sm text-[#86868b]"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>Dedicated solutions architect</li>
+                    </ul>
+                </div>
+                <button class="bg-[#1d1d1f] hover:bg-[#2d2d2f] text-[#f5f5f7] border border-[#424245] px-6 py-3 rounded-full font-medium transition-all duration-200 w-full text-center block cursor-pointer">Contact Sales</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-[#f5f5f7] mb-3">Frequently Asked Questions</h2>
+            <p class="text-[#86868b] text-sm">Everything you need to know about SuperDesign Agent.</p>
+        </div>
+        <div class="space-y-4">
+            
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 rounded-2xl p-6 transition-all">
+                <button onclick="toggleFaq(0)" class="w-full flex items-center justify-between text-left font-bold text-[#f5f5f7] text-lg cursor-pointer">
+                    <span>How does SuperDesign Agent generate code without external credits?</span>
+                    <i id="faq-icon-0" data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                </button>
+                <div id="faq-answer-0" class="hidden mt-4 text-[#86868b] text-sm leading-relaxed border-t border-slate-800/50 pt-4">
+                    It utilizes deterministic design systems, token matrix heuristics, and local generative layouts without any API rate limits or recurring monthly credits.
+                </div>
+            </div>
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 rounded-2xl p-6 transition-all">
+                <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between text-left font-bold text-[#f5f5f7] text-lg cursor-pointer">
+                    <span>Can I export to React / Next.js?</span>
+                    <i id="faq-icon-1" data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                </button>
+                <div id="faq-answer-1" class="hidden mt-4 text-[#86868b] text-sm leading-relaxed border-t border-slate-800/50 pt-4">
+                    Yes! All components are built with standard Tailwind utility classes and modular HTML structure that translates directly to React/Vue/Svelte.
+                </div>
+            </div>
+            <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 rounded-2xl p-6 transition-all">
+                <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between text-left font-bold text-[#f5f5f7] text-lg cursor-pointer">
+                    <span>Are the layouts responsive on mobile devices?</span>
+                    <i id="faq-icon-2" data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                </button>
+                <div id="faq-answer-2" class="hidden mt-4 text-[#86868b] text-sm leading-relaxed border-t border-slate-800/50 pt-4">
+                    100%. Every block includes mobile breakpoints (sm, md, lg, xl) with responsive typography, collapsible navigation, and touch-friendly controls.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800/60 py-12 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-[#86868b]">
+            <div class="flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-5 h-5 text-indigo-400"></i>
+                <span class="font-bold text-[#f5f5f7]">Antigravity Studio</span>
+                <span>© 2026. All rights reserved.</span>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-[#f5f5f7]">Privacy</a>
+                <a href="#" class="hover:text-[#f5f5f7]">Terms</a>
+                <a href="https://github.com/romangalaxys10-spec" class="hover:text-[#f5f5f7]">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script>
+        lucide.createIcons();
+
+        function toggleFaq(index) {
+            var ans = document.getElementById('faq-answer-' + index);
+            var icon = document.getElementById('faq-icon-' + index);
+            if (ans.classList.contains('hidden')) {
+                ans.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                ans.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>

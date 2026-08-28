@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperDesign Vision — Slide Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="bg-[#000000] text-[#f5f5f7] font-sans tracking-tight antialiased min-h-screen overflow-hidden flex flex-col justify-between select-none">
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 inset-x-0 h-1.5 bg-slate-800/40 z-50">
+        <div id="progress-bar" class="h-full bg-gradient-to-r from-[#2997ff] via-[#9955ff] to-[#ff2d55] transition-all duration-300 w-0"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <header class="p-6 flex items-center justify-between text-sm text-[#86868b] z-40">
+        <div class="flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i>
+            <span class="font-bold text-[#f5f5f7]">SuperDesign Vision</span>
+        </div>
+        <div class="flex items-center gap-4 text-xs">
+            <span class="hidden md:inline">Use <kbd class="px-2 py-1 bg-slate-800 rounded">←</kbd> <kbd class="px-2 py-1 bg-slate-800 rounded">→</kbd> or <kbd class="px-2 py-1 bg-slate-800 rounded">Space</kbd></span>
+            <button onclick="toggleFullscreen()" class="hover:text-[#f5f5f7] cursor-pointer p-1">
+                <i data-lucide="maximize" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Slide Stage -->
+    <main class="flex-1 relative flex items-center justify-center max-w-7xl w-full mx-auto px-6">
+        
+            <section id="slide-0" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-100 scale-100 z-10">
+                
+                <div class="text-center space-y-6 max-w-4xl mx-auto">
+                    <div class="bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium inline-flex items-center gap-2 mb-4"><i data-lucide="presentation" class="w-4 h-4"></i><span>Democratizing Autonomous UI & Presentation Engineering</span></div>
+                    <h1 class="text-6xl md:text-7xl font-extrabold text-[#f5f5f7] tracking-tight leading-tight">
+                        SuperDesign Agent
+                    </h1>
+                    <p class="text-2xl text-[#86868b] font-light">
+                        Chief AI Architect
+                    </p>
+                </div>
+            </section>
+            <section id="slide-1" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-0 scale-95 pointer-events-none absolute inset-0 z-0">
+                
+                <div class="w-full max-w-6xl mx-auto space-y-8">
+                    <div>
+                        <div class="bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium inline-block mb-3">Why Traditional AI Design Tools Fail</div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-[#f5f5f7]">The Broken Status Quo</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                    <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center">
+                            <i data-lucide="ban" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#f5f5f7]">Predatory Credit Systems</h3>
+                        <p class="text-[#86868b] text-base leading-relaxed">Developers run out of monthly credits in 15 minutes.</p>
+                    </div>
+                    <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center">
+                            <i data-lucide="image-off" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#f5f5f7]">Disconnected Output</h3>
+                        <p class="text-[#86868b] text-base leading-relaxed">Static images that take hours to convert to real code.</p>
+                    </div>
+                    <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center">
+                            <i data-lucide="shuffle" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#f5f5f7]">Style Inconsistency</h3>
+                        <p class="text-[#86868b] text-base leading-relaxed">Every prompt generates a completely random disjointed aesthetic.</p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            <section id="slide-2" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-0 scale-95 pointer-events-none absolute inset-0 z-0">
+                
+                <div class="text-center space-y-8 max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-[#86868b]">The SuperDesign Advantage</h2>
+                    <div class="text-8xl md:text-9xl font-black bg-gradient-to-r from-[#2997ff] via-[#9955ff] to-[#ff2d55] bg-clip-text text-transparent tracking-tighter">
+                        0$
+                    </div>
+                    <p class="text-2xl text-[#f5f5f7] font-medium max-w-2xl mx-auto">
+                        Zero paid credits. 100% deterministic local generation forever.
+                    </p>
+                </div>
+            </section>
+            <section id="slide-3" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-0 scale-95 pointer-events-none absolute inset-0 z-0">
+                
+                <div class="w-full max-w-6xl mx-auto space-y-8">
+                    <div>
+                        <div class="bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium inline-block mb-3">Unified Design System Matrix</div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-[#f5f5f7]">Four Distinct Aesthetic Dimensions</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                    <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center">
+                            <i data-lucide="sparkles" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#f5f5f7]">Apple Minimal</h3>
+                        <p class="text-[#86868b] text-base leading-relaxed">Pure black, SF typography, understated luxury.</p>
+                    </div>
+                    <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center">
+                            <i data-lucide="monitor" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#f5f5f7]">Modern SaaS</h3>
+                        <p class="text-[#86868b] text-base leading-relaxed">Indigo glow, glassmorphism, crisp telemetry.</p>
+                    </div>
+                    <div class="bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#1d1d1f] text-[#2997ff] border border-[#2d2d2f] px-3 py-1 rounded-full text-xs font-medium flex items-center justify-center">
+                            <i data-lucide="box" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-[#f5f5f7]">Neo-Brutalist</h3>
+                        <p class="text-[#86868b] text-base leading-relaxed">Bold 4px borders, hard shadows, vibrant accents.</p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            <section id="slide-4" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-0 scale-95 pointer-events-none absolute inset-0 z-0">
+                
+                <div class="max-w-4xl mx-auto text-center space-y-8">
+                    <i data-lucide="quote" class="w-16 h-16 mx-auto text-indigo-400 opacity-60"></i>
+                    <blockquote class="text-4xl md:text-5xl font-serif italic text-[#f5f5f7] leading-snug">
+                        "Simplicity is the ultimate sophistication."
+                    </blockquote>
+                    <div class="text-[#86868b] text-xl font-medium">
+                        — Leonardo da Vinci / Steve Jobs
+                    </div>
+                </div>
+            </section>
+    </main>
+
+    <!-- Bottom Controls -->
+    <footer class="p-6 flex items-center justify-between text-sm text-[#86868b] z-40">
+        <div class="text-xs">
+            Presented by <span class="text-[#f5f5f7] font-medium">Chief AI Architect</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <button onclick="prevSlide()" class="p-2 rounded-xl bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 hover:text-[#f5f5f7] cursor-pointer">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <span id="slide-indicator" class="font-mono text-xs font-bold text-[#f5f5f7]">1 / 5</span>
+            <button onclick="nextSlide()" class="p-2 rounded-xl bg-[#161617]/70 backdrop-blur-2xl border border-[#2d2d2f] hover:border-[#424245] transition-all duration-300 hover:text-[#f5f5f7] cursor-pointer">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </footer>
+
+    
+    <script>
+        lucide.createIcons();
+        var currentSlide = 0;
+        var totalSlides = 5;
+
+        function updateSlide(newIndex) {
+            if (newIndex < 0 || newIndex >= totalSlides) return;
+            
+            var prevEl = document.getElementById('slide-' + currentSlide);
+            prevEl.classList.remove('opacity-100', 'scale-100', 'z-10');
+            prevEl.classList.add('opacity-0', 'scale-95', 'pointer-events-none', 'absolute', 'inset-0', 'z-0');
+
+            currentSlide = newIndex;
+            var nextEl = document.getElementById('slide-' + currentSlide);
+            nextEl.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', 'absolute', 'inset-0', 'z-0');
+            nextEl.classList.add('opacity-100', 'scale-100', 'z-10');
+
+            document.getElementById('slide-indicator').innerText = (currentSlide + 1) + ' / ' + totalSlides;
+            var progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+        }
+
+        function nextSlide() { updateSlide(currentSlide + 1); }
+        function prevSlide() { updateSlide(currentSlide - 1); }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(function() {});
+            } else {
+                document.exitFullscreen().catch(function() {});
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            } else if (e.key === 'Home') {
+                updateSlide(0);
+            } else if (e.key === 'End') {
+                updateSlide(totalSlides - 1);
+            }
+        });
+
+        updateSlide(0);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+# Zero mandatory external requirements (uses Python standard library + CDN assets)

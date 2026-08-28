@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "superdesign-agent"
+version = "1.0.0"
+description = "Autonomous Design & Presentation Engine - Zero paid credits required."
+authors = [{ name = "AI Agent Architect" }]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.9"
+
+[project.scripts]
+superdesign = "cli.superdesign:main"

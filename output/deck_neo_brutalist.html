@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Future of Autonomous Agents — Slide Deck</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="bg-[#fdf6e2] text-black font-sans font-bold antialiased min-h-screen overflow-hidden flex flex-col justify-between select-none">
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 inset-x-0 h-1.5 bg-slate-800/40 z-50">
+        <div id="progress-bar" class="h-full bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300 transition-all duration-300 w-0"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <header class="p-6 flex items-center justify-between text-sm text-neutral-700 z-40">
+        <div class="flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i>
+            <span class="font-bold text-black">The Future of Autonomous Agents</span>
+        </div>
+        <div class="flex items-center gap-4 text-xs">
+            <span class="hidden md:inline">Use <kbd class="px-2 py-1 bg-slate-800 rounded">←</kbd> <kbd class="px-2 py-1 bg-slate-800 rounded">→</kbd> or <kbd class="px-2 py-1 bg-slate-800 rounded">Space</kbd></span>
+            <button onclick="toggleFullscreen()" class="hover:text-black cursor-pointer p-1">
+                <i data-lucide="maximize" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Slide Stage -->
+    <main class="flex-1 relative flex items-center justify-center max-w-7xl w-full mx-auto px-6">
+        
+            <section id="slide-0" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-100 scale-100 z-10">
+                
+                <div class="text-center space-y-6 max-w-4xl mx-auto">
+                    <div class="bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-flex items-center gap-2 mb-4"><i data-lucide="presentation" class="w-4 h-4"></i><span>AI-Powered Architecture & Vision</span></div>
+                    <h1 class="text-6xl md:text-7xl font-extrabold text-black tracking-tight leading-tight">
+                        The Future of Autonomous Agents
+                    </h1>
+                    <p class="text-2xl text-neutral-700 font-light">
+                        SuperDesign Architect
+                    </p>
+                </div>
+            </section>
+            <section id="slide-1" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-0 scale-95 pointer-events-none absolute inset-0 z-0">
+                
+                <div class="w-full max-w-6xl mx-auto space-y-8">
+                    <div>
+                        <div class="bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-block mb-3">High Friction & Hidden Paywalls</div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-black">The Problem with Modern Design Tools</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                    <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+                            <i data-lucide="alert-triangle" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-black">Credit Traps</h3>
+                        <p class="text-neutral-700 text-base leading-relaxed">$30/mo for 50 design generations is unsustainable.</p>
+                    </div>
+                    <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+                            <i data-lucide="scissors" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-black">Figma-to-Code Gap</h3>
+                        <p class="text-neutral-700 text-base leading-relaxed">Designers deliver canvas shapes, developers rebuild from scratch.</p>
+                    </div>
+                    <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+                            <i data-lucide="clock" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-black">Slow Iteration</h3>
+                        <p class="text-neutral-700 text-base leading-relaxed">Days spent tweaking margins and padding.</p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            <section id="slide-2" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-0 scale-95 pointer-events-none absolute inset-0 z-0">
+                
+                <div class="text-center space-y-8 max-w-4xl mx-auto">
+                    <h2 class="text-3xl font-bold text-neutral-700">Unrivaled Engineering Velocity</h2>
+                    <div class="text-8xl md:text-9xl font-black bg-gradient-to-r from-yellow-300 via-pink-300 to-cyan-300 bg-clip-text text-transparent tracking-tighter">
+                        10X
+                    </div>
+                    <p class="text-2xl text-black font-medium max-w-2xl mx-auto">
+                        Faster turnaround from prompt to live production UI
+                    </p>
+                </div>
+            </section>
+            <section id="slide-3" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-0 scale-95 pointer-events-none absolute inset-0 z-0">
+                
+                <div class="w-full max-w-6xl mx-auto space-y-8">
+                    <div>
+                        <div class="bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] inline-block mb-3">Radical Simplicity</div>
+                        <h2 class="text-4xl md:text-5xl font-extrabold text-black">The Three Architectural Pillars</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        
+                    <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+                            <i data-lucide="cpu" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-black">1. Zero-Credit Engine</h3>
+                        <p class="text-neutral-700 text-base leading-relaxed">Runs 100% locally with zero external API dependencies.</p>
+                    </div>
+                    <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+                            <i data-lucide="code-2" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-black">2. Production Tailwind</h3>
+                        <p class="text-neutral-700 text-base leading-relaxed">Outputs clean, maintainable, responsive code.</p>
+                    </div>
+                    <div class="bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 p-8 rounded-2xl text-left space-y-4">
+                        <div class="w-10 h-10 rounded-xl bg-[#FF90E8] text-black border-2 border-black px-3 py-1 font-black text-xs uppercase shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] flex items-center justify-center">
+                            <i data-lucide="palette" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-black">3. Multi-Theme Matrix</h3>
+                        <p class="text-neutral-700 text-base leading-relaxed">Apple Minimal, Modern SaaS, Cyberpunk, and Neo-Brutalist.</p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+            <section id="slide-4" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 opacity-0 scale-95 pointer-events-none absolute inset-0 z-0">
+                
+                <div class="max-w-4xl mx-auto text-center space-y-8">
+                    <i data-lucide="quote" class="w-16 h-16 mx-auto text-indigo-400 opacity-60"></i>
+                    <blockquote class="text-4xl md:text-5xl font-serif italic text-black leading-snug">
+                        "Design is not just what it looks like and feels like. Design is how it works."
+                    </blockquote>
+                    <div class="text-neutral-700 text-xl font-medium">
+                        — Steve Jobs
+                    </div>
+                </div>
+            </section>
+    </main>
+
+    <!-- Bottom Controls -->
+    <footer class="p-6 flex items-center justify-between text-sm text-neutral-700 z-40">
+        <div class="text-xs">
+            Presented by <span class="text-black font-medium">SuperDesign Architect</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <button onclick="prevSlide()" class="p-2 rounded-xl bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:text-black cursor-pointer">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </button>
+            <span id="slide-indicator" class="font-mono text-xs font-bold text-black">1 / 5</span>
+            <button onclick="nextSlide()" class="p-2 rounded-xl bg-white border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] transition-all duration-200 hover:text-black cursor-pointer">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </footer>
+
+    
+    <script>
+        lucide.createIcons();
+        var currentSlide = 0;
+        var totalSlides = 5;
+
+        function updateSlide(newIndex) {
+            if (newIndex < 0 || newIndex >= totalSlides) return;
+            
+            var prevEl = document.getElementById('slide-' + currentSlide);
+            prevEl.classList.remove('opacity-100', 'scale-100', 'z-10');
+            prevEl.classList.add('opacity-0', 'scale-95', 'pointer-events-none', 'absolute', 'inset-0', 'z-0');
+
+            currentSlide = newIndex;
+            var nextEl = document.getElementById('slide-' + currentSlide);
+            nextEl.classList.remove('opacity-0', 'scale-95', 'pointer-events-none', 'absolute', 'inset-0', 'z-0');
+            nextEl.classList.add('opacity-100', 'scale-100', 'z-10');
+
+            document.getElementById('slide-indicator').innerText = (currentSlide + 1) + ' / ' + totalSlides;
+            var progress = ((currentSlide + 1) / totalSlides) * 100;
+            document.getElementById('progress-bar').style.width = progress + '%';
+        }
+
+        function nextSlide() { updateSlide(currentSlide + 1); }
+        function prevSlide() { updateSlide(currentSlide - 1); }
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch(function() {});
+            } else {
+                document.exitFullscreen().catch(function() {});
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+                e.preventDefault();
+                prevSlide();
+            } else if (e.key === 'f' || e.key === 'F') {
+                toggleFullscreen();
+            } else if (e.key === 'Home') {
+                updateSlide(0);
+            } else if (e.key === 'End') {
+                updateSlide(totalSlides - 1);
+            }
+        });
+
+        updateSlide(0);
+    </script>
+
+</body>
+</html>
