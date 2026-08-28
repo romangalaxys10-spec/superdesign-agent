@@ -1,23 +1,23 @@
 """
-Interactive 16:9 Slide Deck Generator.
-Generates responsive presentation slide decks with keyboard navigation, progress bars, animations, and presenter modes.
+Anti-Slop Keynote Slide Deck Generator.
+Produces stark, high-contrast, typographically exquisite 16:9 presentation decks.
 """
 
 from typing import Dict, List, Any
-from .theme_matrix import ThemeMatrix, ThemeStyle
+from .taste_matrix import TasteMatrix, TasteArchetype
 
 
 class SlideGenerator:
-    """Builds interactive HTML slide decks with zero dependencies."""
+    """Builds presentation slide decks with International Typographic Style."""
 
     @staticmethod
     def generate_deck(
         deck_title: str,
         presenter: str,
         slides: List[Dict[str, Any]],
-        theme_style: str = "apple_minimal",
+        theme_style: str = "swiss_international",
     ) -> str:
-        theme = ThemeMatrix.get_theme(theme_style)
+        theme = TasteMatrix.get_theme(theme_style)
         
         slides_html = ""
         for i, slide in enumerate(slides):
@@ -30,27 +30,31 @@ class SlideGenerator:
             
             inner_html = ""
             if s_type == "title":
-                sub_badge = f'<div class="{theme.badge_style} inline-flex items-center gap-2 mb-4"><i data-lucide="presentation" class="w-4 h-4"></i><span>{s_subtitle or "Keynote Presentation"}</span></div>'
                 inner_html = f"""
-                <div class="text-center space-y-6 max-w-4xl mx-auto">
-                    {sub_badge}
-                    <h1 class="text-6xl md:text-7xl font-extrabold {theme.text_primary} tracking-tight leading-tight">
+                <div class="text-left max-w-5xl mx-auto space-y-8">
+                    <div class="flex items-center gap-3">
+                        <span class="{theme.badge_style}">KEYNOTE SPECIFICATION</span>
+                        <span class="text-xs font-mono text-neutral-500">// {s_subtitle or 'CONFIDENTIAL'}</span>
+                    </div>
+                    <h1 class="text-6xl sm:text-8xl font-black {theme.font_family_display} {theme.text_primary} tracking-tight leading-[0.9] uppercase">
                         {s_title}
                     </h1>
-                    <p class="text-2xl {theme.text_secondary} font-light">
-                        {presenter}
-                    </p>
+                    <div class="pt-8 border-t-2 border-[{theme.accent_color}] flex items-center justify-between">
+                        <span class="text-xl {theme.text_secondary} font-mono">{presenter}</span>
+                        <span class="text-xs uppercase font-mono tracking-widest text-neutral-500">2026 EDITION</span>
+                    </div>
                 </div>"""
             elif s_type == "metric" and s_metric:
                 val = s_metric.get('value', '10X')
-                lbl = s_metric.get('label', 'Performance boost and cost reduction achieved.')
+                lbl = s_metric.get('label', 'Engineering velocity multiplier.')
                 inner_html = f"""
-                <div class="text-center space-y-8 max-w-4xl mx-auto">
-                    <h2 class="text-3xl font-bold {theme.text_secondary}">{s_title}</h2>
-                    <div class="text-8xl md:text-9xl font-black {theme.accent_gradient} bg-clip-text text-transparent tracking-tighter">
+                <div class="max-w-5xl mx-auto text-left space-y-8">
+                    <span class="text-xs font-mono text-neutral-500 uppercase tracking-widest">// QUANTIFIABLE IMPACT</span>
+                    <h2 class="text-3xl font-bold {theme.font_family_display} {theme.text_primary}">{s_title}</h2>
+                    <div class="text-9xl sm:text-[13rem] font-black {theme.font_family_display} text-[{theme.accent_color}] tracking-tighter leading-none">
                         {val}
                     </div>
-                    <p class="text-2xl {theme.text_primary} font-medium max-w-2xl mx-auto">
+                    <p class="text-2xl {theme.text_secondary} max-w-2xl font-mono">
                         {lbl}
                     </p>
                 </div>"""
@@ -58,58 +62,54 @@ class SlideGenerator:
                 q_text = s_quote.get('text', '')
                 q_author = s_quote.get('author', 'Steve Jobs')
                 inner_html = f"""
-                <div class="max-w-4xl mx-auto text-center space-y-8">
-                    <i data-lucide="quote" class="w-16 h-16 mx-auto text-indigo-400 opacity-60"></i>
-                    <blockquote class="text-4xl md:text-5xl font-serif italic {theme.text_primary} leading-snug">
+                <div class="max-w-4xl mx-auto text-left space-y-8 border-l-4 border-[{theme.accent_color}] pl-10">
+                    <blockquote class="text-4xl sm:text-6xl font-serif italic {theme.text_primary} leading-tight">
                         "{q_text}"
                     </blockquote>
-                    <div class="{theme.text_secondary} text-xl font-medium">
+                    <div class="{theme.text_secondary} font-mono text-sm uppercase tracking-widest">
                         — {q_author}
                     </div>
                 </div>"""
             else:
                 cards = ""
-                for item in s_content:
+                for idx, item in enumerate(s_content):
                     c_title = item.get("title", "") if isinstance(item, dict) else str(item)
                     c_desc = item.get("desc", "") if isinstance(item, dict) else ""
-                    c_icon = item.get("icon", "check-circle-2") if isinstance(item, dict) else "check-circle-2"
-                    desc_html = f'<p class="{theme.text_secondary} text-base leading-relaxed">{c_desc}</p>' if c_desc else ''
+                    c_tag = f"0{idx+1}"
                     cards += f"""
-                    <div class="{theme.card_bg} {theme.card_border} p-8 rounded-2xl text-left space-y-4">
-                        <div class="w-10 h-10 rounded-xl {theme.badge_style} flex items-center justify-center">
-                            <i data-lucide="{c_icon}" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold {theme.text_primary}">{c_title}</h3>
-                        {desc_html}
+                    <div class="{theme.card_style} relative">
+                        <div class="text-xs font-mono text-neutral-500 mb-4">// {c_tag}</div>
+                        <h3 class="text-2xl font-bold {theme.font_family_display} {theme.text_primary} mb-3">{c_title}</h3>
+                        <p class="{theme.font_family_body} {theme.text_secondary} text-sm leading-relaxed">{c_desc}</p>
                     </div>"""
                 
-                sub_badge = f'<div class="{theme.badge_style} inline-block mb-3">{s_subtitle}</div>' if s_subtitle else ''
                 inner_html = f"""
                 <div class="w-full max-w-6xl mx-auto space-y-8">
-                    <div>
-                        {sub_badge}
-                        <h2 class="text-4xl md:text-5xl font-extrabold {theme.text_primary}">{s_title}</h2>
+                    <div class="border-b {theme.border_rule} pb-6 flex items-end justify-between">
+                        <div>
+                            <span class="text-xs font-mono text-neutral-500 uppercase tracking-widest">// {s_subtitle or 'SECTION'}</span>
+                            <h2 class="text-5xl font-black {theme.font_family_display} {theme.text_primary} uppercase tracking-tight mt-1">{s_title}</h2>
+                        </div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {cards}
                     </div>
                 </div>"""
 
             active_cls = "opacity-100 scale-100 z-10" if i == 0 else "opacity-0 scale-95 pointer-events-none absolute inset-0 z-0"
             slides_html += f"""
-            <section id="slide-{i}" class="slide-item transition-all duration-500 ease-out flex items-center justify-center p-12 {active_cls}">
+            <section id="slide-{i}" class="slide-item transition-all duration-400 ease-out flex items-center justify-center p-12 {active_cls}">
                 {inner_html}
             </section>"""
 
         num_slides = len(slides)
-        
-        js_block = """
+        js_block = f"""
     <script>
         lucide.createIcons();
         var currentSlide = 0;
-        var totalSlides = NUM_SLIDES_PLACEHOLDER;
+        var totalSlides = {num_slides};
 
-        function updateSlide(newIndex) {
+        function updateSlide(newIndex) {{
             if (newIndex < 0 || newIndex >= totalSlides) return;
             
             var prevEl = document.getElementById('slide-' + currentSlide);
@@ -124,90 +124,78 @@ class SlideGenerator:
             document.getElementById('slide-indicator').innerText = (currentSlide + 1) + ' / ' + totalSlides;
             var progress = ((currentSlide + 1) / totalSlides) * 100;
             document.getElementById('progress-bar').style.width = progress + '%';
-        }
+        }}
 
-        function nextSlide() { updateSlide(currentSlide + 1); }
-        function prevSlide() { updateSlide(currentSlide - 1); }
+        function nextSlide() {{ updateSlide(currentSlide + 1); }}
+        function prevSlide() {{ updateSlide(currentSlide - 1); }}
 
-        function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen().catch(function() {});
-            } else {
-                document.exitFullscreen().catch(function() {});
-            }
-        }
+        function toggleFullscreen() {{
+            if (!document.fullscreenElement) {{
+                document.documentElement.requestFullscreen().catch(function() {{}});
+            }} else {{
+                document.exitFullscreen().catch(function() {{}});
+            }}
+        }}
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        document.addEventListener('keydown', function(e) {{
+            if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {{
                 e.preventDefault();
                 nextSlide();
-            } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            }} else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {{
                 e.preventDefault();
                 prevSlide();
-            } else if (e.key === 'f' || e.key === 'F') {
+            }} else if (e.key === 'f' || e.key === 'F') {{
                 toggleFullscreen();
-            } else if (e.key === 'Home') {
+            }} else if (e.key === 'Home') {{
                 updateSlide(0);
-            } else if (e.key === 'End') {
+            }} else if (e.key === 'End') {{
                 updateSlide(totalSlides - 1);
-            }
-        });
+            }}
+        }});
 
         updateSlide(0);
-    </script>
-""".replace("NUM_SLIDES_PLACEHOLDER", str(num_slides))
+    </script>"""
 
         return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{deck_title} — Slide Deck</title>
+    <title>{deck_title} — Keynote Deck</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="{theme.font_import_url}" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
-    </style>
 </head>
-<body class="{theme.body_bg} {theme.font_family} min-h-screen overflow-hidden flex flex-col justify-between select-none">
+<body class="{theme.bg_style} {theme.font_family_body} min-h-screen overflow-hidden flex flex-col justify-between select-none">
 
-    <!-- Progress Bar -->
-    <div class="fixed top-0 inset-x-0 h-1.5 bg-slate-800/40 z-50">
-        <div id="progress-bar" class="h-full {theme.accent_gradient} transition-all duration-300 w-0"></div>
+    <!-- Progress Line -->
+    <div class="fixed top-0 inset-x-0 h-1 bg-neutral-800 z-50">
+        <div id="progress-bar" class="h-full bg-[{theme.accent_color}] transition-all duration-200 w-0"></div>
     </div>
 
-    <!-- Top Bar -->
-    <header class="p-6 flex items-center justify-between text-sm {theme.text_secondary} z-40">
-        <div class="flex items-center gap-2">
-            <i data-lucide="sparkles" class="w-4 h-4 text-indigo-400"></i>
-            <span class="font-bold {theme.text_primary}">{deck_title}</span>
+    <!-- Header -->
+    <header class="p-8 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-neutral-500 z-40 border-b {theme.border_rule}">
+        <div class="flex items-center gap-3">
+            <span class="font-bold text-white">{deck_title}</span>
         </div>
-        <div class="flex items-center gap-4 text-xs">
-            <span class="hidden md:inline">Use <kbd class="px-2 py-1 bg-slate-800 rounded">←</kbd> <kbd class="px-2 py-1 bg-slate-800 rounded">→</kbd> or <kbd class="px-2 py-1 bg-slate-800 rounded">Space</kbd></span>
-            <button onclick="toggleFullscreen()" class="hover:{theme.text_primary} cursor-pointer p-1">
-                <i data-lucide="maximize" class="w-4 h-4"></i>
-            </button>
+        <div class="flex items-center gap-4">
+            <span>[NAV: ← → / SPACE]</span>
+            <button onclick="toggleFullscreen()" class="hover:text-white cursor-pointer">[FULLSCREEN: F]</button>
         </div>
     </header>
 
-    <!-- Main Slide Stage -->
-    <main class="flex-1 relative flex items-center justify-center max-w-7xl w-full mx-auto px-6">
+    <!-- Main Stage -->
+    <main class="flex-1 relative flex items-center justify-center max-w-7xl w-full mx-auto px-8">
         {slides_html}
     </main>
 
-    <!-- Bottom Controls -->
-    <footer class="p-6 flex items-center justify-between text-sm {theme.text_secondary} z-40">
-        <div class="text-xs">
-            Presented by <span class="{theme.text_primary} font-medium">{presenter}</span>
-        </div>
+    <!-- Footer -->
+    <footer class="p-8 flex items-center justify-between text-xs font-mono uppercase tracking-widest text-neutral-500 z-40 border-t {theme.border_rule}">
+        <div>{presenter}</div>
         <div class="flex items-center gap-4">
-            <button onclick="prevSlide()" class="p-2 rounded-xl {theme.card_bg} {theme.card_border} hover:{theme.text_primary} cursor-pointer">
-                <i data-lucide="chevron-left" class="w-5 h-5"></i>
-            </button>
-            <span id="slide-indicator" class="font-mono text-xs font-bold {theme.text_primary}">1 / {num_slides}</span>
-            <button onclick="nextSlide()" class="p-2 rounded-xl {theme.card_bg} {theme.card_border} hover:{theme.text_primary} cursor-pointer">
-                <i data-lucide="chevron-right" class="w-5 h-5"></i>
-            </button>
+            <button onclick="prevSlide()" class="p-2 border border-neutral-700 hover:text-white cursor-pointer">PREV</button>
+            <span id="slide-indicator" class="font-bold text-white">1 / {num_slides}</span>
+            <button onclick="nextSlide()" class="p-2 border border-neutral-700 hover:text-white cursor-pointer">NEXT</button>
         </div>
     </footer>
 

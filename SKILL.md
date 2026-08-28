@@ -1,52 +1,62 @@
 ---
-name: superdesign-agent
-description: Autonomous design agent to generate responsive websites, landing pages, interactive 16:9 presentation slide decks, and product dashboards with zero paid credits.
-version: 1.0.0
+name: anti-slop-superdesign
+description: Autonomous Anti-AI-Slop design agent to create bespoke architectural websites, 16:9 presentation decks, and industrial telemetry HUDs without generic AI tropes or paid credits.
+version: 2.0.0
 author: AI Agent Architect
 ---
 
-# SuperDesign Agent · Autonomous UI & Presentation Engine
+# Anti-Slop SuperDesign Agent · Bespoke Design & Presentation Engine
 
-> "Design websites, interactive pitch decks, and product components without paying for superdesign.dev credits."
+> "Banish generic purple gradients, default Inter font, and 3-column card slop. Build with Swiss asymmetry, industrial tactile depth, and haute typography."
 
 ## 🎯 Activation Triggers
+- `anti-slop design`
 - `design website`
 - `build landing page`
-- `create slide deck`
-- `generate pitch deck`
-- `design product dashboard`
-- `parallel design exploration`
+- `create keynote slide deck`
+- `audit slop`
+- `industrial telemetry HUD`
 - `superdesign`
 
 ---
 
-## ⚡ Execution Workflow (Protocol)
+## 🛡️ The 5 Anti-Slop Design Laws
 
-1. **Identify Output Intent**:
-   - **Website / Landing Page**: Hero, Metrics, Bento Grid Features, Pricing Cards, Accordion FAQ, Footer.
-   - **16:9 Interactive Slide Deck**: Keynote title, Problem/Solution, Metric callout, 3-Pillar Architecture, Quote.
-   - **Product UI / Dashboard**: Real-time KPI widgets, Chart.js graphs, event tables, sidebar navigation.
-   - **4-Variant Exploration**: Parallel canvas rendering Modern SaaS, Apple Minimal, Cyberpunk Neon, and Neo-Brutalist styles.
+1. **Banned Clichés**:
+   - ❌ NO purple-to-pink gradient blur blobs (`from-indigo-500 to-pink-500`).
+   - ❌ NO default un-styled Inter font.
+   - ❌ NO repetitive symmetric 3-card monotony.
+   - ❌ NO hollow marketing buzzwords (*"supercharge"*, *"empower"*, *"revolutionize"*).
 
-2. **Select Theme Matrix**:
-   - `modern_saas`: Slate 900, Indigo/Violet gradients, glassmorphism.
-   - `apple_minimal`: Deep black `#000000`, SF typography, subtle `#2d2d2f` borders.
-   - `cyberpunk_neon`: Black, Electric Cyan, Hot Pink, Monospace, neon glow.
-   - `neo_brutalist`: Bold `#FFE600` / `#FF90E8`, 4px black borders, hard offset drop shadows.
-   - `clean_editorial`: Warm cream `#f9f8f6`, serif typography, understated luxury.
+2. **The 4 Radical Taste Archetypes**:
+   - **`swiss_international`**: Bauhaus grid, extreme scale typography (`Syne` + `Space Grotesk`), stark monochrome + bold vermillion (`#FF3B00`), hairline border rules.
+   - **`industrial_hud`**: Teenage Engineering hardware aesthetic, `Chivo Mono` + `Plus Jakarta Sans`, phosphor amber (`#FFB000`), tactile dot-matrix grids, physical knurled buttons.
+   - **`haute_editorial`**: Luxury magazine craft, `Playfair Display` + `Instrument Sans`, warm museum canvas (`#F7F5F0`), espresso ink, asymmetric drop caps.
+   - **`neo_cybernetic`**: Wipeout wireframe telemetry, `Clash Display` + `JetBrains Mono`, electric acid lime (`#CCFF00`), isometric grid lines.
 
-3. **Generate Standalone Artifact**:
-   - Uses Tailwind CSS CDN, Lucide icons, Chart.js, and pure vanilla JS.
-   - 100% self-contained single HTML files that run immediately in any browser or webview without npm build steps.
-
-4. **Verify & Preview**:
-   - Open locally or serve via built-in server (`python3 cli/superdesign.py serve`).
+3. **Built-in Quality Audit**:
+   - Every design is automatically passed through `AntiSlopAuditor` to guarantee 100% slop-free compliance and `A+` human taste grade.
 
 ---
 
-## 🛡️ Failure Modes & Fallbacks
-| Condition | Primary Action | Fallback |
-|---|---|---|
-| Ambiguous visual style | Generate 4-variant parallel comparison canvas | Prompt user to pick favourite aesthetic |
-| Complex data charts requested | Inject Chart.js with responsive dark-theme options | Render fallback SVG data visualization |
-| Offline / restricted CDN | Inline fallback CSS grid & standard SVG icons | Generate pure HTML/CSS bundle |
+## ⚡ CLI Protocol
+
+```bash
+# Audit any website for AI Slop
+superdesign audit --file ./site.html
+
+# Auto-purify slop from HTML
+superdesign purify --file ./site.html
+
+# Generate Swiss International Architectural Site
+superdesign site --title "KryptonCore" --theme swiss_international --prompt "High-frequency slot streaming engine"
+
+# Generate 16:9 Keynote Deck
+superdesign slide --title "The Anti-Slop Architecture" --presenter "Lead Architect" --theme swiss_international
+
+# Generate Industrial Telemetry HUD
+superdesign product --name "SolanaSentinel" --theme industrial_hud
+
+# Explore 4 Archetypes Side-by-Side
+superdesign explore --prompt "Autonomous Trading Terminal"
+```

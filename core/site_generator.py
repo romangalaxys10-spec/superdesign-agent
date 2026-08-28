@@ -1,14 +1,14 @@
 """
-Site & Landing Page Generator.
-Generates full-fidelity, responsive, production-ready landing pages with Tailwind CSS, Lucide icons, and interactive widgets.
+Anti-Slop Site & Landing Page Generator.
+Builds bespoke, asymmetric, typographically bold web layouts free of generic AI tropes.
 """
 
 from typing import Dict, List, Optional, Any
-from .theme_matrix import ThemeMatrix, ThemeStyle, DesignTheme
+from .taste_matrix import TasteMatrix, TasteArchetype, AntiSlopTheme
 
 
 class SiteGenerator:
-    """Generates complete responsive web experiences."""
+    """Generates human-taste architectural web experiences."""
 
     @staticmethod
     def generate_site(
@@ -16,149 +16,61 @@ class SiteGenerator:
         tagline: str,
         description: str,
         features: List[Dict[str, str]],
-        theme_style: str = "modern_saas",
-        cta_text: str = "Get Started Free",
+        theme_style: str = "swiss_international",
+        cta_text: str = "Initiate Protocol",
         metrics: Optional[List[Dict[str, str]]] = None,
         pricing_plans: Optional[List[Dict[str, Any]]] = None,
-        testimonials: Optional[List[Dict[str, str]]] = None,
-        faqs: Optional[List[Dict[str, str]]] = None,
+        manifesto: Optional[str] = None,
     ) -> str:
-        theme = ThemeMatrix.get_theme(theme_style)
+        theme = TasteMatrix.get_theme(theme_style)
         
         default_metrics = metrics or [
-            {"value": "99.99%", "label": "Uptime Guarantee"},
-            {"value": "<10ms", "label": "Sub-millisecond Latency"},
-            {"value": "10M+", "label": "Events Processed / Sec"},
-            {"value": "4.9/5", "label": "Developer Satisfaction"},
+            {"value": "0.04ms", "label": "Mean Deterministic Latency"},
+            {"value": "100%", "label": "Self-Contained Local Execution"},
+            {"value": "0.00$", "label": "Third-Party API Credit Cost"},
+            {"value": "4.98★", "label": "Architectural Taste Index"},
         ]
 
-        default_pricing = pricing_plans or [
-            {
-                "name": "Starter",
-                "price": "$0",
-                "period": "/mo",
-                "desc": "Perfect for indie hackers and side projects.",
-                "features": ["10,000 requests/mo", "Community support", "1 workspace", "Basic analytics"],
-                "popular": False,
-                "cta": "Start for Free"
-            },
-            {
-                "name": "Pro Architect",
-                "price": "$49",
-                "period": "/mo",
-                "desc": "For high-velocity engineering teams.",
-                "features": ["Unlimited requests", "24/7 Dedicated SLA", "Infinite workspaces", "Deep AI telemetry", "Custom webhooks"],
-                "popular": True,
-                "cta": "Start 14-Day Free Trial"
-            },
-            {
-                "name": "Enterprise",
-                "price": "Custom",
-                "period": "",
-                "desc": "Dedicated infrastructure & bespoke compliance.",
-                "features": ["Self-hosted VPC option", "SOC2 Type II compliance", "Custom model fine-tuning", "Dedicated solutions architect"],
-                "popular": False,
-                "cta": "Contact Sales"
-            }
-        ]
+        # Manifesto copy (Anti-slop narrative)
+        manifesto_text = manifesto or (
+            "We reject the sea of identical purple-gradient SaaS clones. "
+            "Real engineering demands uncompromising typography, tactile depth, "
+            "asymmetric balance, and structural honesty."
+        )
 
-        default_faqs = faqs or [
-            {
-                "q": "How does SuperDesign Agent generate code without external credits?",
-                "a": "It utilizes deterministic design systems, token matrix heuristics, and local generative layouts without any API rate limits or recurring monthly credits."
-            },
-            {
-                "q": "Can I export to React / Next.js?",
-                "a": "Yes! All components are built with standard Tailwind utility classes and modular HTML structure that translates directly to React/Vue/Svelte."
-            },
-            {
-                "q": "Are the layouts responsive on mobile devices?",
-                "a": "100%. Every block includes mobile breakpoints (sm, md, lg, xl) with responsive typography, collapsible navigation, and touch-friendly controls."
-            }
-        ]
-
-        # Features HTML
+        # Features HTML (Asymmetric Swiss or Industrial format)
         features_html = ""
         for i, feat in enumerate(features):
-            icon = feat.get("icon", "sparkles")
-            f_title = feat.get("title", f"Feature {i+1}")
-            f_desc = feat.get("desc", "High-performance modular architecture engineered for maximum developer velocity.")
+            f_title = feat.get("title", f"Protocol {i+1}")
+            f_desc = feat.get("desc", "High-density deterministic component design with zero AI bloat.")
+            f_tag = feat.get("tag", f"MOD_{i+1:02d}")
+            
             features_html += f"""
-            <div class="{theme.card_bg} {theme.card_border} p-8 rounded-2xl relative overflow-hidden group">
-                <div class="w-12 h-12 rounded-xl {theme.badge_style} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <i data-lucide="{icon}" class="w-6 h-6"></i>
+            <div class="{theme.card_style} relative group">
+                <div class="flex items-center justify-between mb-6 pb-2 border-b {theme.border_rule}">
+                    <span class="{theme.font_family_body} text-xs uppercase tracking-widest text-neutral-500">{f_tag}</span>
+                    <span class="text-xs font-mono {theme.text_secondary}">[ACTIVE]</span>
                 </div>
-                <h3 class="text-xl font-bold {theme.text_primary} mb-3">{f_title}</h3>
-                <p class="{theme.text_secondary} leading-relaxed text-sm">{f_desc}</p>
+                <h3 class="text-2xl font-bold {theme.font_family_display} {theme.text_primary} mb-3 tracking-tight">{f_title}</h3>
+                <p class="{theme.font_family_body} {theme.text_secondary} text-sm leading-relaxed">{f_desc}</p>
             </div>"""
 
-        # Metrics HTML
+        # Metrics HTML (High-contrast numbers)
         metrics_html = ""
         for m in default_metrics:
             metrics_html += f"""
-            <div class="text-center p-6">
-                <div class="text-4xl lg:text-5xl font-extrabold {theme.text_primary} mb-2 tracking-tight">{m['value']}</div>
-                <div class="{theme.text_secondary} text-sm font-medium">{m['label']}</div>
+            <div class="p-8 border-b md:border-b-0 md:border-r last:border-r-0 {theme.border_rule}">
+                <div class="text-5xl lg:text-6xl font-black {theme.font_family_display} {theme.text_primary} mb-2 tracking-tighter">{m['value']}</div>
+                <div class="{theme.font_family_body} {theme.text_secondary} text-xs uppercase tracking-widest">{m['label']}</div>
             </div>"""
 
-        # Pricing HTML
-        pricing_html = ""
-        for p in default_pricing:
-            pop_badge = f'<span class="{theme.badge_style} absolute -top-3 left-1/2 -translate-x-1/2">Most Popular</span>' if p["popular"] else ""
-            border_cls = "ring-2 ring-indigo-500 shadow-2xl" if p["popular"] and "saas" in theme.key else theme.card_border
-            btn_cls = theme.button_primary if p["popular"] else theme.button_secondary
-            
-            p_features = "".join([f'<li class="flex items-center gap-3 text-sm {theme.text_secondary}"><i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0"></i>{item}</li>' for item in p["features"]])
+        # Noise & Texture Overlay CSS
+        noise_svg = """
+    <svg class="pointer-events-none fixed inset-0 z-50 h-full w-full opacity-[0.03]" xmlns="http://www.w3.org/2000/svg">
+        <filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/></filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)"/>
+    </svg>"""
 
-            pricing_html += f"""
-            <div class="{theme.card_bg} {border_cls} p-8 rounded-3xl relative flex flex-col justify-between">
-                {pop_badge}
-                <div>
-                    <h4 class="text-xl font-bold {theme.text_primary} mb-2">{p['name']}</h4>
-                    <p class="{theme.text_secondary} text-xs mb-6">{p['desc']}</p>
-                    <div class="flex items-baseline gap-1 mb-6">
-                        <span class="text-4xl font-extrabold {theme.text_primary}">{p['price']}</span>
-                        <span class="{theme.text_secondary} text-sm">{p['period']}</span>
-                    </div>
-                    <ul class="space-y-3 mb-8">
-                        {p_features}
-                    </ul>
-                </div>
-                <button class="{btn_cls} w-full text-center block cursor-pointer">{p['cta']}</button>
-            </div>"""
-
-        # FAQs HTML
-        faqs_html = ""
-        for i, faq in enumerate(default_faqs):
-            faqs_html += f"""
-            <div class="{theme.card_bg} {theme.card_border} rounded-2xl p-6 transition-all">
-                <button onclick="toggleFaq({i})" class="w-full flex items-center justify-between text-left font-bold {theme.text_primary} text-lg cursor-pointer">
-                    <span>{faq['q']}</span>
-                    <i id="faq-icon-{i}" data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
-                </button>
-                <div id="faq-answer-{i}" class="hidden mt-4 {theme.text_secondary} text-sm leading-relaxed border-t border-slate-800/50 pt-4">
-                    {faq['a']}
-                </div>
-            </div>"""
-
-        js_script = """
-    <script>
-        lucide.createIcons();
-
-        function toggleFaq(index) {
-            var ans = document.getElementById('faq-answer-' + index);
-            var icon = document.getElementById('faq-icon-' + index);
-            if (ans.classList.contains('hidden')) {
-                ans.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                ans.classList.add('hidden');
-                icon.style.transform = 'rotate(0deg)';
-            }
-        }
-    </script>"""
-
-        # Build full HTML
         return f"""<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -166,116 +78,104 @@ class SiteGenerator:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title} — {tagline}</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{theme.font_import_url}" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,700;1,6..72,400&display=swap');
+        .grid-matrix {{
+            background-size: 32px 32px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+        }}
+        .dot-matrix {{
+            background-size: 24px 24px;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+        }}
     </style>
 </head>
-<body class="{theme.body_bg} {theme.font_family} min-h-screen selection:bg-indigo-500 selection:text-white">
+<body class="{theme.bg_style} {theme.font_family_body} min-h-screen selection:bg-[{theme.accent_color}] selection:text-white relative">
+    {noise_svg}
 
-    <!-- Navigation -->
-    <header class="fixed top-0 inset-x-0 z-50 px-6 py-4">
-        <nav class="max-w-7xl mx-auto {theme.card_bg} {theme.card_border} rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg">
-            <div class="flex items-center gap-3">
-                <div class="w-9 h-9 rounded-xl {theme.accent_gradient} flex items-center justify-center text-white font-black shadow-md">
-                    <i data-lucide="sparkles" class="w-5 h-5"></i>
-                </div>
-                <span class="text-lg font-bold tracking-tight {theme.text_primary}">{title}</span>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium {theme.text_secondary}">
-                <a href="#features" class="hover:{theme.text_primary} transition-colors">Features</a>
-                <a href="#metrics" class="hover:{theme.text_primary} transition-colors">Performance</a>
-                <a href="#pricing" class="hover:{theme.text_primary} transition-colors">Pricing</a>
-                <a href="#faq" class="hover:{theme.text_primary} transition-colors">FAQ</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="#pricing" class="{theme.button_primary} text-xs py-2 px-4 shadow-sm">{cta_text}</a>
-            </div>
-        </nav>
+    <!-- Top Architecture Bar -->
+    <header class="border-b {theme.border_rule} px-8 py-5 flex items-center justify-between sticky top-0 z-40 bg-inherit/90 backdrop-blur-md">
+        <div class="flex items-center gap-4">
+            <span class="text-xl font-black tracking-tighter {theme.font_family_display} {theme.text_primary} uppercase">{title}</span>
+            <span class="{theme.badge_style}">{tagline}</span>
+        </div>
+        <div class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-bold {theme.text_secondary}">
+            <a href="#manifesto" class="hover:{theme.text_primary} transition-colors">Manifesto</a>
+            <a href="#architecture" class="hover:{theme.text_primary} transition-colors">Architecture</a>
+            <a href="#specs" class="hover:{theme.text_primary} transition-colors">Telemetry</a>
+        </div>
+        <div>
+            <a href="#specs" class="{theme.button_primary}">{cta_text}</a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-36 pb-20 px-6 overflow-hidden">
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <div class="inline-flex items-center gap-2 {theme.badge_style} mb-8">
-                <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-                <span>{tagline}</span>
+    <!-- Hero: Asymmetric Editorial Scale -->
+    <section class="pt-24 pb-20 px-8 max-w-7xl mx-auto border-b {theme.border_rule}">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+            <div class="lg:col-span-8 space-y-6">
+                <div class="{theme.font_family_body} text-xs uppercase tracking-[0.25em] text-neutral-500 flex items-center gap-2">
+                    <span class="inline-block w-2 h-2 bg-[{theme.accent_color}]"></span>
+                    <span>ANTI-SLOP ARCHITECTURAL SPECIFICATION 2026</span>
+                </div>
+                <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black {theme.font_family_display} {theme.text_primary} tracking-tight leading-[0.95] uppercase">
+                    Form Follows <br>
+                    <span class="text-[{theme.accent_color}]">Precision.</span>
+                </h1>
+                <p class="text-lg md:text-xl {theme.text_secondary} max-w-2xl leading-relaxed pt-4">
+                    {description}
+                </p>
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold {theme.text_primary} tracking-tight leading-[1.1] mb-8">
-                Design & Ship at the <br>
-                <span class="{theme.accent_gradient} bg-clip-text text-transparent">Speed of Thought</span>
-            </h1>
-            <p class="text-lg md:text-xl {theme.text_secondary} max-w-3xl mx-auto leading-relaxed mb-10">
-                {description}
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="#pricing" class="{theme.button_primary} text-base px-8 py-4 flex items-center gap-2">
-                    <span>{cta_text}</span>
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                </a>
-                <a href="#features" class="{theme.button_secondary} text-base px-8 py-4">
-                    Explore Architecture
-                </a>
+            <div class="lg:col-span-4 border-t-2 border-[{theme.accent_color}] pt-6 space-y-4">
+                <div class="text-xs font-mono uppercase text-neutral-500">SYSTEM MANIFESTO // 01</div>
+                <p class="text-sm italic {theme.text_primary} font-serif leading-relaxed">
+                    "{manifesto_text}"
+                </p>
+                <div class="pt-4 flex gap-4">
+                    <a href="#architecture" class="{theme.button_primary} w-full text-center">Deploy Engine</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Metrics Section -->
-    <section id="metrics" class="py-12 border-y border-slate-800/40 bg-slate-950/20">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6">
+    <!-- Metrics Strip -->
+    <section class="border-b {theme.border_rule} max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-4">
             {metrics_html}
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-5xl font-extrabold {theme.text_primary} mb-4">Engineered for Radical Velocity</h2>
-            <p class="{theme.text_secondary} text-base">Uncompromising performance, modular component design, and zero credit limits.</p>
+    <!-- Architectural Modules -->
+    <section id="architecture" class="py-24 px-8 max-w-7xl mx-auto border-b {theme.border_rule}">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b {theme.border_rule} gap-6">
+            <div>
+                <span class="text-xs font-mono text-neutral-500 uppercase tracking-widest">// ARCHITECTURAL TOPOLOGY</span>
+                <h2 class="text-4xl md:text-5xl font-black {theme.font_family_display} {theme.text_primary} tracking-tight uppercase mt-2">Engineered Modules</h2>
+            </div>
+            <p class="{theme.text_secondary} max-w-md text-xs uppercase tracking-wider leading-relaxed">
+                Zero cookie-cutter components. Each module is crafted with strict typography, discrete bounding boxes, and verified telemetry.
+            </p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             {features_html}
         </div>
     </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <h2 class="text-3xl md:text-5xl font-extrabold {theme.text_primary} mb-4">Simple, Transparent Pricing</h2>
-            <p class="{theme.text_secondary} text-base">No hidden credits. No per-prompt metered fees. Own your tools forever.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {pricing_html}
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 px-6 max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold {theme.text_primary} mb-3">Frequently Asked Questions</h2>
-            <p class="{theme.text_secondary} text-sm">Everything you need to know about SuperDesign Agent.</p>
-        </div>
-        <div class="space-y-4">
-            {faqs_html}
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="border-t border-slate-800/60 py-12 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-sm {theme.text_secondary}">
-            <div class="flex items-center gap-2">
-                <i data-lucide="sparkles" class="w-5 h-5 text-indigo-400"></i>
-                <span class="font-bold {theme.text_primary}">{title}</span>
-                <span>© 2026. All rights reserved.</span>
-            </div>
-            <div class="flex gap-6">
-                <a href="#" class="hover:{theme.text_primary}">Privacy</a>
-                <a href="#" class="hover:{theme.text_primary}">Terms</a>
-                <a href="https://github.com/romangalaxys10-spec" class="hover:{theme.text_primary}">GitHub</a>
-            </div>
+    <footer class="py-12 px-8 max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-xs uppercase tracking-widest {theme.text_secondary}">
+        <div>
+            <span class="font-bold {theme.text_primary}">{title}</span> — Built with Anti-Slop Standards.
+        </div>
+        <div class="flex gap-8 font-mono">
+            <span>[NO PURPLE BLOBS]</span>
+            <span>[NO GENERIC INTER]</span>
+            <span>[NO PAYWALLS]</span>
         </div>
     </footer>
 
-    {js_script}
+    <script>lucide.createIcons();</script>
 </body>
 </html>"""
