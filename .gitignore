@@ -1,0 +1,55 @@
+# Environment & Secrets (NEVER COMMIT)
+.env
+.env.*
+*.env
+*.token
+*secret*
+*credential*
+*.pem
+*.key
+*.id_rsa
+*.p12
+*.keystore
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+
+# IDE & OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local Workspaces & Scratch
+runs/ws/
+runs/results.json
+scratch/
+tmp/
+*.log
